@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --hue:194;
+    --bg-color:hsl(var(--hue),5%,7%);
+    --text-color:hsl(var(--hue), 40%, 98%);
+    --primary-color:hsl(var(--hue),100%,63%);
+    --controls-bg-color:hsl(var(--hue),0%,14%);
+    --button-secondary:hsl(var(--hue), 96%, 44%);
+    /*minimo de 40%, media de 1% + 2vw da largura da tela, maximo de 62.5%*/
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+    --bg-button: hsl(var(--hue), 40%, 98%);
+}
+
+html.light{
+    --text-color:hsl(var(--hue),5%,7%);
+    --bg-color:hsl(var(--hue), 40%, 98%);
+    --controls-bg-color:hsl(var(--hue),0%,14%);
+}
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+    display: none;
+}
+
+#toggle-mode{
+    position: absolute;
+    right: 3.2rem;
+    top:3.2rem;
+    font-size: 3.2rem;
+    line-height: 0;
+    color: var(--text-color);
+}
+
+.sr-only{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    appearance: none;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    gap:19rem
+
+}
+.flex{
+    display: flex;
+}
+#timer{
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#controls {
+    margin-top: 1.6rem;
+    padding: 2.2rem 4rem;
+    gap: 1.6rem;
+    background-color: var(--controls-bg-color);
+    border-radius: 999rem;
+}
+button{
+    background-color: transparent;
+    border: 0;
+    color: var(--bg-button);
+    cursor: pointer;
+    font-size: 6.4rem;
+    transition: .3s;
+}
+
+.running .ph-play-circle{
+    color: var(--button-secondary);
+}
+html:not(.running) .ph-pause-circle{
+    color: var(--button-secondary);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-b{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+} 
+.container-b button{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.florest{
+    background-image: url("./assets/icons/florest.svg");
+    
+}
+.rain{
+    background-image: url('./assets/icons/rain.svg');
+}
+.Coffe{
+    background-image: url('./assets/icons/Coffe.svg');
+}
+.larei{
+    background-image: url('./assets/icons/larei.svg');
+}
+@media (min-width:900px) {
+    #app{
+        display: flex;
+        flex-direction: row;
+        gap:19rem;
+    
+    }
+}

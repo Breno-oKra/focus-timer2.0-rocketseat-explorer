@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <title>Focus Time</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./src/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <button id="toggle-mode">
+            <!--ativar somente para scream reader, leitores de tela, o leitor de tela com 
+                voz ira ler ativar e desativar mesmo não aparecendo em tela-->
+            <span class="sr-only">Ativar light mode</span>
+            <i class="ph-bold ph-sun"></i>
+            <i class="ph-bold ph-moon"></i>
+        </button>
+        <div class="container">
+            <section id="timer" class="flex">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+
+            <section id="controls" class="flex">
+                <button class="ph ph-play-circle" data-action="toggleRunning"></button>
+                <span class="sr-only">Iniciar Contador</span>
+                <button class="ph ph-pause-circle " data-action="togglePause"></button>
+                <span class="sr-only">Pausar Contador</span>
+                <!-- <button class="ph ph-timer secondary" data-action="set"></button> -->
+                <button class="ph ph-plus-circle " data-action="add"></button>
+                <button class="ph ph-minus-circle " data-action="remove"></button>
+                <!--  <span class="sr-only" >Ajustar Contador</span>
+                <button class="ph ph-stop-circle secondary" data-action="reset"></button> -->
+            </section>
+
+        </div>
+        <div class="container-b">
+            <button type="button" class="florest" data-sound="florest" >
+               
+
+            </button>
+            <button type="button" class='rain' data-sound="rain" >
+               
+
+            </button>
+            <button class="larei" data-sound="larei" type="button">
+
+             
+            </button>
+            <button class="Coffe" data-sound="Coffe" type="button">
+               
+            </button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
