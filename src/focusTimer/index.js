@@ -33,13 +33,13 @@ export function start(minutes, seconds) {
 
         //acionando novo campo
         camp = event.target
-        camp.style.backgroundImage = `url("../../assets/icons/active/${camp.dataset.sound}.svg")`;
+        camp.style.backgroundImage = `url("../../assets/icons/${camp.dataset.sound}Active.svg")`;
         events.toggleMusics(camp.dataset.sound);
         state.music = camp.dataset.sound
         state.campMusic = camp
         return
       }
-      event.target.style.backgroundImage = `url("../../assets/icons/active/${event.target.dataset.sound}.svg")`;
+      event.target.style.backgroundImage = `url("../../assets/icons/${event.target.dataset.sound}Active.svg")`;
       const sound = event.target.dataset.sound;
       state.campMusic = event.target
       events.toggleMusics(sound);
