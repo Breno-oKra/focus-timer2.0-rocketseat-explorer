@@ -20,7 +20,7 @@ export function start(minutes, seconds) {
       if (state.music != "") {
         if( state.campMusic == event.target){
           
-          camp.style.backgroundImage = `url("../../assets/icons/${camp.dataset.sound}.svg")`;
+          camp.style.backgroundImage = `url("./assets/icons/${camp.dataset.sound}.svg")`;
 
           const sound = camp.dataset.sound;
           events.toggleMusics(sound);
@@ -28,18 +28,18 @@ export function start(minutes, seconds) {
           state.campMusic = null
           return
         }
-        camp.style.backgroundImage = `url("../../assets/icons/${camp.dataset.sound}.svg")`;
+        camp.style.backgroundImage = `url("./assets/icons/${camp.dataset.sound}.svg")`;
         events.toggleMusics(camp.dataset.sound);
 
         //acionando novo campo
         camp = event.target
-        camp.style.backgroundImage = `url("../../assets/icons/${camp.dataset.sound}Active.svg")`;
+        camp.style.backgroundImage = `url("./assets/icons/${camp.dataset.sound}Active.svg")`;
         events.toggleMusics(camp.dataset.sound);
         state.music = camp.dataset.sound
         state.campMusic = camp
         return
       }
-      event.target.style.backgroundImage = `url("../../assets/icons/${event.target.dataset.sound}Active.svg")`;
+      event.target.style.backgroundImage = `url("./assets/icons/${event.target.dataset.sound}Active.svg")`;
       const sound = event.target.dataset.sound;
       state.campMusic = event.target
       events.toggleMusics(sound);
